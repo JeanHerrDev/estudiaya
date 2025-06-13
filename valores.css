@@ -83,6 +83,11 @@ body {
 
 /* Tablets y pantallas medianas (hasta 1024px de ancho) */
 @media (max-width: 1024px) {
+
+  .menu {
+    display: none !important;
+  }
+
   .menu a {
     margin: 0 8px; /* Reduce el espacio entre enlaces del menú */
     font-size: 0.95rem; /* Tamaño de fuente más pequeño */
