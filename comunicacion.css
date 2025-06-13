@@ -1,0 +1,124 @@
+/* ======= Estilos generales ======= */
+body {
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  font-family: 'Roboto', sans-serif; /* Fuente principal del sitio */
+  background-color: #f4f4f4; /* Color de fondo claro */
+}
+
+.header {
+  background-color: red; /* Fondo rojo para el encabezado superior */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centra el texto */
+  padding: 8px; /* Espaciado interno */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.logo {
+  display: flex; /* Alinea logo + texto en fila */
+  align-items: center; /* Centra verticalmente dentro del contenedor */
+  gap: 10px; /* Espacio entre imagen y texto del logo */
+}
+
+.logo span {
+  font-weight: bold; /* Texto en negrita para el nombre */
+  font-size: 1.2rem; /* Tamaño de fuente del texto al lado del logo */
+}
+
+.menu a {
+  margin: 0 10px; /* Espacio horizontal entre los enlaces del menú */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: black; /* Color de texto negro */
+  font-weight: 500; /* Peso medio de la fuente */
+}
+
+.menu a:hover {
+  text-decoration: underline; /* Agrega subrayado al pasar el mouse */
+}
+
+/* ======= Barra de navegación ======= */
+.navbar {
+  display: flex; /* Usa flexbox para alinear elementos horizontalmente */
+  justify-content: space-between; /* Espacia los elementos al máximo (izquierda y derecha) */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  padding: 0px 20px; /* Espaciado horizontal */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra ligera para dar profundidad */
+}
+
+/* ======= Sección del video ======= */
+.video-section {
+  text-align: center; /* Centra el contenido horizontalmente */
+  padding: 50px 20px; /* Espacio alrededor del contenido */
+}
+
+.video-section h1 {
+  font-size: 2rem; /* Tamaño grande para el título */
+  margin-bottom: 30px; /* Espacio debajo del título */
+}
+
+/* ======= Contenedor del reproductor de video ======= */
+.video-container {
+  position: relative; /* Contenedor relativo para que el iframe se posicione sobre él */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 900px; /* Máximo ancho del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding-bottom: 56.25%; /* Relación 16:9 (alto proporcional) */
+  height: 0; /* Altura inicial 0 (se calcula con el padding) */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra alrededor del video */
+}
+
+/* ======= Estilo del iframe (YouTube) ======= */
+.video-container iframe {
+  position: absolute; /* Se posiciona encima del contenedor relativo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa basada en el padding del contenedor */
+  border: none; /* Elimina el borde del iframe */
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets y pantallas medianas (hasta 1024px de ancho) */
+@media (max-width: 1024px) {
+  .menu a {
+    margin: 0 8px; /* Reduce el espacio entre enlaces del menú */
+    font-size: 0.95rem; /* Tamaño de fuente más pequeño */
+  }
+}
+
+/* Dispositivos móviles medianos (hasta 768px de ancho) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Apila logo y menú uno encima del otro */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    padding: 10px 20px; /* Aumenta el padding vertical */
+  }
+
+  .menu {
+    display: flex; /* Muestra el menú como fila flexible */
+    flex-wrap: wrap; /* Permite que los elementos salten a otra línea */
+    justify-content: flex-start; /* Alinea los enlaces al inicio */
+    gap: 10px; /* Espacio entre los enlaces */
+    margin-top: 10px; /* Espacio entre logo y menú */
+  }
+}
+
+/* Dispositivos móviles pequeños (hasta 480px de ancho) */
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para el texto del logo */
+  }
+
+  .menu {
+    flex-direction: column; /* Menú en columna */
+    align-items: flex-start; /* Alineación a la izquierda */
+  }
+
+  .menu a {
+    display: block; /* Cada enlace ocupa una línea */
+    margin: 5px 0; /* Espaciado vertical entre enlaces */
+  }
+}

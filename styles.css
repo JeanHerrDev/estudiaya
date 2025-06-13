@@ -1,0 +1,192 @@
+body {
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto en todo el sitio */
+  background-color: #ffffff; /* Fondo blanco para toda la página */
+  background-image: url(img/Fondo.png);
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center;  /* Centra la imagen en la pantalla */
+  background-attachment: fixed;           /* Fondo se queda fijo al hacer scroll */
+}
+
+.header {
+  background-color: red; /* Fondo rojo para el encabezado superior */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centra el texto */
+  padding: 8px; /* Espaciado interno */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.navbar {
+  display: flex; /* Usa flexbox para alinear elementos horizontalmente */
+  justify-content: space-between; /* Espacia los elementos al máximo (izquierda y derecha) */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  padding: 0px 20px; /* Espaciado horizontal */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra ligera para dar profundidad */
+}
+
+.logo {
+  display: flex; /* Alinea logo + texto en fila */
+  align-items: center; /* Centra verticalmente dentro del contenedor */
+  gap: 10px; /* Espacio entre imagen y texto del logo */
+}
+
+.logo span {
+  font-weight: bold; /* Texto en negrita para el nombre */
+  font-size: 1.2rem; /* Tamaño de fuente del texto al lado del logo */
+}
+
+.menu a {
+  margin: 0 10px; /* Espacio horizontal entre los enlaces del menú */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: black; /* Color de texto negro */
+  font-weight: 500; /* Peso medio de la fuente */
+}
+
+.menu a:hover {
+  text-decoration: underline; /* Agrega subrayado al pasar el mouse */
+}
+
+.course-section {
+  padding: 80px 40px; /* Espacio interno arriba/abajo y laterales */
+  background-color:transparent; /* Fondo transparente claro para distinguir la sección */
+  text-align: center; /* Centra el contenido dentro de la sección */
+}
+
+.course-section h2 {
+  font-size: 2rem; /* Tamaño grande para el título de la sección */
+  margin-bottom: 40px; /* Espacio debajo del título */
+  color: #ffffff; /* Color de texto blanco */
+}
+
+.course-container {
+  display: flex; /* Usa flexbox para colocar las tarjetas en fila */
+  flex-wrap: wrap; /* Permite que las tarjetas se bajen a otra línea si no caben */
+  justify-content: center; /* Centra todas las tarjetas horizontalmente */
+  gap: 60px; /* Espacio entre cada tarjeta */
+}
+
+.course-card {
+  background-color: #fff; /* Fondo blanco de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+  width: 260px; /* Ancho fijo para las tarjetas */
+  overflow: hidden; /* Oculta contenido que se salga del borde */
+  text-align: center; /* Centra el contenido dentro de la tarjeta */
+}
+
+.course-card img {
+  width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+  height: 60%; /* Altura relativa del contenedor (puedes ajustar con px si prefieres) */
+  object-fit: cover; /* La imagen se recorta bien sin deformarse */
+}
+
+.course-card h3 {
+  margin-top: 10px; /* Espacio arriba del título del curso */
+  font-size: 1.1rem; /* Tamaño de fuente del título */
+}
+
+.course-card p {
+  padding: 0 10px; /* Espaciado lateral del texto descriptivo */
+  font-size: 0.95rem; /* Tamaño de texto estándar */
+  color: #444; /* Gris oscuro para buena legibilidad */
+}
+
+.course-card button {
+  margin: 15px 0 20px; /* Margen superior e inferior */
+  padding: 10px 16px; /* Espaciado interno del botón */
+  background-color: #007bff; /* Azul fuerte para el fondo del botón */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde visible */
+  border-radius: 6px; /* Bordes redondeados en el botón */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+}
+
+.course-card button:hover {
+  background-color: #0056b3; /* Azul más oscuro cuando pasas el mouse */
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets y pantallas medianas (hasta 1024px de ancho) */
+@media (max-width: 1024px) {
+  .menu a {
+    margin: 0 8px; /* Reduce el espacio entre enlaces del menú */
+    font-size: 0.95rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .course-container {
+    gap: 40px; /* Reduce el espacio entre las tarjetas */
+  }
+
+  .course-card {
+    width: 220px; /* Disminuye el ancho de las tarjetas */
+  }
+}
+
+/* Dispositivos móviles medianos (hasta 768px de ancho) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Apila logo y menú uno encima del otro */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    padding: 10px 20px; /* Aumenta el padding vertical */
+  }
+
+  .menu {
+    display: flex; /* Muestra el menú como fila flexible */
+    flex-wrap: wrap; /* Permite que los elementos salten a otra línea */
+    justify-content: flex-start; /* Alinea los enlaces al inicio */
+    gap: 10px; /* Espacio entre los enlaces */
+    margin-top: 10px; /* Espacio entre logo y menú */
+  }
+
+  .course-section {
+    padding: 50px 20px; /* Menos padding general en móviles */
+  }
+
+  .course-card {
+    width: 90%; /* Tarjetas ocupan casi todo el ancho disponible */
+    max-width: 320px; /* Límite máximo para no hacerlas gigantes */
+  }
+}
+
+/* Dispositivos móviles pequeños (hasta 480px de ancho) */
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para el texto del logo */
+  }
+
+  .menu {
+    flex-direction: column; /* Menú en columna */
+    align-items: flex-start; /* Alineación a la izquierda */
+  }
+
+  .menu a {
+    display: block; /* Cada enlace ocupa una línea */
+    margin: 5px 0; /* Espaciado vertical entre enlaces */
+  }
+
+  .course-section h2 {
+    font-size: 1.5rem; /* Título más pequeño en celulares */
+  }
+
+  .course-container {
+    flex-direction: column; /* Tarjetas una debajo de otra */
+    align-items: center; /* Centra las tarjetas */
+    gap: 30px; /* Espacio entre tarjetas */
+  }
+
+  .course-card {
+    width: 90%; /* Tarjetas casi de ancho completo */
+  }
+
+  .course-card p {
+    font-size: 0.9rem; /* Texto más pequeño en la descripción */
+  }
+
+  .course-card button {
+    padding: 8px 12px; /* Botón más pequeño */
+    font-size: 0.9rem; /* Tamaño de letra del botón reducido */
+  }
+}
